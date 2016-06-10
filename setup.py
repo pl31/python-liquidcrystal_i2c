@@ -10,4 +10,4 @@ setup(name='liquidcrystal_i2c',
       packages=['liquidcrystal_i2c'],
       license='MIT License',
       requires='pysmbus',
-     )
+      zip_safe=True)
