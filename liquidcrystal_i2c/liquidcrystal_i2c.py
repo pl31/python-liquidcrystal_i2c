@@ -1,13 +1,7 @@
-# licquidcrystal_i2c is used for the LCD-Module
-#   LCD1602  I2C
-#
-# more information could be found in the producers wiki:
-#   http://www.dfrobot.com/wiki/index.php?title=I2C/TWI_LCD1602_Module_(SKU:_DFR0063)
-#
-# This is a port of the sources found here:
-#   http://www.dfrobot.com/image/data/DFR0154/LiquidCrystal_I2Cv1-1.rar
-#
-# Keywords: LCD1602 I2C, V1, V2, I2C1602V2, YWROBOT
+# Author: Patrick Buech
+# Url: https://github.com/pl31/python-liquidcrystal_i2c
+# License: MIT
+# Ported from: http://www.dfrobot.com/image/data/DFR0154/LiquidCrystal_I2Cv1-1.rar
 
 import smbus
 import time
