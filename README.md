@@ -17,3 +17,13 @@ Install directly from github (may need admin rights for `python setup.py install
 git clone --depth=1 https://github.com/pl31/python-liquidcrystal_i2c.git
 (cd python-liquidcrystal_i2c/ && python setup.py install)
 ```
+
+## Todo
+
+Nice to have:
+
+- A lot of methods from the original sources are still missing, as I do not need them. 
+For a complete port these should be included.
+- Add example code
+- Add docstring
+- Add automated egg creation (travis?)
