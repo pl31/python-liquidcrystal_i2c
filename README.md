@@ -18,6 +18,11 @@ git clone --depth=1 https://github.com/pl31/python-liquidcrystal_i2c.git
 (cd python-liquidcrystal_i2c/ && python setup.py install)
 ```
 
+or download as tarball and install it:
+```
+wget https://github.com/pl31/python-liquidcrystal_i2c/tarball/master
+```
+
 ## Todo
 
 Nice to have:
@@ -26,4 +31,3 @@ Nice to have:
 For a complete port these should be included
 - Add example code
 - Add docstring
-- Add automated egg creation (travis?)
