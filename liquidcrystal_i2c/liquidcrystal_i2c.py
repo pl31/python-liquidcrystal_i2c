@@ -54,7 +54,7 @@ class LiquidCrystal_I2C:
     _Rs = 0x01  # Register select bit
 
 
-    def __init__(self, addr, port, numlines=2):
+    def __init__(self, addr, port, numlines=2, clear=True):
         self._addr = addr
         self._smbus = smbus.SMBus(port)
         self._backlightval = 0x08 # always on
@@ -92,16 +92,15 @@ class LiquidCrystal_I2C:
             LiquidCrystal_I2C._LCD_CURSOROFF | LiquidCrystal_I2C._LCD_BLINKOFF
         self._command(LiquidCrystal_I2C._LCD_DISPLAYCONTROL | self._displaycontrol)
 
-        # clear it off
-        self.clear()
-
         # Initialize to default text direction (for roman languages)
         self._displaymode = LiquidCrystal_I2C._LCD_ENTRYLEFT | \
             LiquidCrystal_I2C._LCD_ENTRYSHIFTDECREMENT;
         # set the entry mode
         self._command(LiquidCrystal_I2C._LCD_ENTRYMODESET | self._displaymode);
 
-        self.home();
+        # clear it off
+        if clear:
+            self.clear()
 
 
     ### high level commands, for the user! ###
