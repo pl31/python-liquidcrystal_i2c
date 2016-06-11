@@ -11,16 +11,16 @@ _[Keywords: LCM1602 IIC V2, LCM IIC V2, LCD1602 I2C, V1, V2, I2C1602V2, YWROBOT,
 
 ## Install
 
-Install directly from github (may need admin rights for `python setup.py install`):
+Install directly from gihtub using pip:
+```
+pip install https://github.com/pl31/python-liquidcrystal_i2c/archive/master.zip
+```
+
+Install from cloned github repository (may need admin rights for `python setup.py install`):
 
 ```
 git clone --depth=1 https://github.com/pl31/python-liquidcrystal_i2c.git
 (cd python-liquidcrystal_i2c/ && python setup.py install)
-```
-
-or download as tarball and install it:
-```
-wget https://github.com/pl31/python-liquidcrystal_i2c/tarball/master
 ```
 
 ## Todo
