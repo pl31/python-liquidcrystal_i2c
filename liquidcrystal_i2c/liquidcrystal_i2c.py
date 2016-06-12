@@ -116,7 +116,7 @@ class LiquidCrystal_I2C:
     def setCursor(self, col, row):
         row_offsets = [ 0x00, 0x40, 0x14, 0x54 ]
         if row < 0 and row >= self._numlines:
-            row = raise IndexError('Argument row out of range') # we count rows starting w/0
+            raise IndexError('Argument row out of range') # we count rows starting w/0
         self._command(LiquidCrystal_I2C._LCD_SETDDRAMADDR | \
             (col + row_offsets[row]))
 
