@@ -28,6 +28,10 @@ git clone --depth=1 https://github.com/pl31/python-liquidcrystal_i2c.git
 (cd python-liquidcrystal_i2c/ && python setup.py install)
 ```
 
+### Dependencies
+
+python-liquidcrystal_i2c depends on a ```smbus```-distribution.
+
 ### Access rights
 
 python-liquidcrystal_i2c needs read/write access to the i2c-bus.
