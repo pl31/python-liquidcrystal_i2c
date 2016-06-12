@@ -7,7 +7,9 @@ More information could be found in
 This module is a port of the sources found 
 [here](http://www.dfrobot.com/image/data/DFR0154/LiquidCrystal_I2Cv1-1.rar).
 
-_[Keywords: LCM1602 IIC V2, LCM IIC V2, LCD1602 I2C, V1, V2, I2C1602V2, YWROBOT, DFROBOT]_
+![LCM2004 IIC V2](docs/lcm2004iicv2.jpg)
+
+_[Keywords: LCM1602 IIC V2, LCM2004 IIC V2, LCM IIC V2, LCD1602 I2C, V1, V2, I2C1602V2, YWROBOT, DFROBOT]_
 
 ## Install
 
