@@ -1,6 +1,6 @@
 # python-liquidcrystal_i2c
 
-licquidcrystal_i2c is a python module for the LCD-Module *LCM1602 IIC V2*. 
+licquidcrystal_i2c is a python library for the LCD-Module *LCM1602 IIC V2* and *LCM2004 IIC V2*. 
 More information could be found in 
 [dfrobot wiki](http://www.dfrobot.com/wiki/index.php?title=I2C/TWI_LCD1602_Module_(SKU:_DFR0063)).
 
