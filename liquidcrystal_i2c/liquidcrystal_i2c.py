@@ -106,14 +106,17 @@ class LiquidCrystal_I2C:
     ### high level commands, for the user! ###
 
     def clear(self):
-        self._command(LiquidCrystal_I2C._LCD_CLEARDISPLAY) # clear display, set cursor position to zero
+        """clear display, set cursor position to zero"""
+        self._command(LiquidCrystal_I2C._LCD_CLEARDISPLAY)
         time.sleep(2) # this command takes a long time!
 
     def home(self):
-        self._command(LiquidCrystal_I2C._LCD_RETURNHOME) # set cursor position to zero
+        """set cursor position to zero"""
+        self._command(LiquidCrystal_I2C._LCD_RETURNHOME)
         time.sleep(2) # this command takes a long time!
 
     def setCursor(self, col, row):
+        """Set cursor to col, row"""
         row_offsets = [ 0x00, 0x40, 0x14, 0x54 ]
         if row < 0 and row >= self._numlines:
             raise IndexError('Argument row out of range') # we count rows starting w/0
@@ -121,23 +124,95 @@ class LiquidCrystal_I2C:
             (col + row_offsets[row]))
 
     def noDisplay(self):
+        """Turn off display"""
         self._displaycontrol &= ~LiquidCrystal_I2C._LCD_DISPLAYON
         self._command(LiquidCrystal_I2C._LCD_DISPLAYCONTROL | self._displaycontrol)
 
     def display(self):
+        """Turn on display"""
         self._displaycontrol |= LiquidCrystal_I2C._LCD_DISPLAYON
         self._command(LiquidCrystal_I2C._LCD_DISPLAYCONTROL | self._displaycontrol)
 
+    def noCursor(self):
+        """Turn off underline cursor"""
+        # _displaycontrol &= ~LCD_CURSORON;
+	    # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        raise NotImplementedError
+
+    def cursor(self):
+        """Turn on underline cursor"""
+        # _displaycontrol |= LCD_CURSORON;
+	    # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        raise NotImplementedError
+
+    def noBlink(self):
+        """Turn off blinking cursor"""
+        # _displaycontrol &= ~LCD_BLINKON;
+	    # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        raise NotImplementedError
+
+    def blink(self):
+        """Turn on blinking cursor"""
+        # _displaycontrol |= LCD_BLINKON;
+        # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        raise NotImplementedError
+
+    def scrollDisplayLeft(self):
+        """Scroll left without changing the RAM"""
+        # command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVELEFT);
+        raise NotImplementedError
+
+    def scrollDisplayRight(self):
+        """Scroll right without changing the RAM"""
+        # command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT);
+        raise NotImplementedError
+
+    def leftToRight(self):
+        """This is for text that flows Left to Right"""
+        # _displaymode |= LCD_ENTRYLEFT;
+	    # command(LCD_ENTRYMODESET | _displaymode);
+        raise NotImplementedError
+
+    def rightToLeft(self):
+        """This is for text that flows Right to Left"""
+        # _displaymode &= ~LCD_ENTRYLEFT;
+	    # command(LCD_ENTRYMODESET | _displaymode);
+        raise NotImplementedError
+
+    def autoscroll(self):
+        """This will 'right justify' text from the cursor"""
+        # _displaymode |= LCD_ENTRYSHIFTINCREMENT;
+        # command(LCD_ENTRYMODESET | _displaymode);
+        raise NotImplementedError
+
+    def noAutoscroll(self):
+        """This will 'left justify' text from the cursor"""
+        # _displaymode &= ~LCD_ENTRYSHIFTINCREMENT;
+        # command(LCD_ENTRYMODESET | _displaymode);
+        raise NotImplementedError
+
+    def createChar(self, location, charmap):
+        """Allows us to fill the first 8 CGRAM locations with custom characters"""
+        # void LiquidCrystal_I2C::createChar(uint8_t location, uint8_t charmap[]) {
+        # location &= 0x7; // we only have 8 locations 0-7
+        # command(LCD_SETCGRAMADDR | (location << 3));
+        # for (int i=0; i<8; i++) {
+        #     write(charmap[i]);
+        # }}
+        raise NotImplementedError
+
     def noBacklight(self):
+        """Turn off the (optional) backlight"""
         self._backlightval = LiquidCrystal_I2C._LCD_NOBACKLIGHT
         self._expanderWrite(0);
 
     def backlight(self):
+        """Turn on the (optional) backlight"""
         self._backlightval = LiquidCrystal_I2C._LCD_BACKLIGHT
         self._expanderWrite(0);
 
-    # print string at cursor
     def printstr(self, value):
+        """Print string at cursor"""
         for c in value:
             self._send(ord(c), 0x01)
 

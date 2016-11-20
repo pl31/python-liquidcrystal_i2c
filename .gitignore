@@ -88,5 +88,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
+# pycharm settings
+.idea/
+
 # Backup file
 *~
