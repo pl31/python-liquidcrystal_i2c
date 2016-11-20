@@ -120,6 +120,22 @@ class LiquidCrystal_I2C:
         self._command(LiquidCrystal_I2C._LCD_SETDDRAMADDR | \
             (col + row_offsets[row]))
 
+    def noDisplay(self):
+        self._displaycontrol &= ~LiquidCrystal_I2C._LCD_DISPLAYON
+        self._command(LiquidCrystal_I2C._LCD_DISPLAYCONTROL | self._displaycontrol)
+
+    def display(self):
+        self._displaycontrol |= LiquidCrystal_I2C._LCD_DISPLAYON
+        self._command(LiquidCrystal_I2C._LCD_DISPLAYCONTROL | self._displaycontrol)
+
+    def noBacklight(self):
+        self._backlightval = LiquidCrystal_I2C._LCD_NOBACKLIGHT
+        self._expanderWrite(0);
+
+    def backlight(self):
+        self._backlightval = LiquidCrystal_I2C._LCD_BACKLIGHT
+        self._expanderWrite(0);
+
     # print string at cursor
     def printstr(self, value):
         for c in value:
