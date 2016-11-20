@@ -136,19 +136,19 @@ class LiquidCrystal_I2C:
     def noCursor(self):
         """Turn off underline cursor"""
         # _displaycontrol &= ~LCD_CURSORON;
-	    # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        # command(LCD_DISPLAYCONTROL | _displaycontrol);
         raise NotImplementedError
 
     def cursor(self):
         """Turn on underline cursor"""
         # _displaycontrol |= LCD_CURSORON;
-	    # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        # command(LCD_DISPLAYCONTROL | _displaycontrol);
         raise NotImplementedError
 
     def noBlink(self):
         """Turn off blinking cursor"""
         # _displaycontrol &= ~LCD_BLINKON;
-	    # command(LCD_DISPLAYCONTROL | _displaycontrol);
+        # command(LCD_DISPLAYCONTROL | _displaycontrol);
         raise NotImplementedError
 
     def blink(self):
@@ -170,13 +170,13 @@ class LiquidCrystal_I2C:
     def leftToRight(self):
         """This is for text that flows Left to Right"""
         # _displaymode |= LCD_ENTRYLEFT;
-	    # command(LCD_ENTRYMODESET | _displaymode);
+        # command(LCD_ENTRYMODESET | _displaymode);
         raise NotImplementedError
 
     def rightToLeft(self):
         """This is for text that flows Right to Left"""
         # _displaymode &= ~LCD_ENTRYLEFT;
-	    # command(LCD_ENTRYMODESET | _displaymode);
+        # command(LCD_ENTRYMODESET | _displaymode);
         raise NotImplementedError
 
     def autoscroll(self):
