@@ -241,7 +241,7 @@ class LiquidCrystal_I2C:
         self._pulseEnable(value)
 
     def _expanderWrite(self, data):
-        self._smbus.write_byte(self._addr, data | self._backlightval)
+        self._smbus.write_byte_data(self._addr, data | self._backlightval)
 
     def _pulseEnable(self, data):
         self._expanderWrite(data | LiquidCrystal_I2C._En) # En high
