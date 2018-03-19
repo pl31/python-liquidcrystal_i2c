@@ -193,13 +193,12 @@ class LiquidCrystal_I2C:
 
     def createChar(self, location, charmap):
         """Allows us to fill the first 8 CGRAM locations with custom characters"""
-        # void LiquidCrystal_I2C::createChar(uint8_t location, uint8_t charmap[]) {
-        # location &= 0x7; // we only have 8 locations 0-7
-        # command(LCD_SETCGRAMADDR | (location << 3));
-        # for (int i=0; i<8; i++) {
-        #     write(charmap[i]);
-        # }}
-        raise NotImplementedError
+        """location: char location 0-7, equals ascii value"""
+        """charmap: array[8] of uint, five lower bits representing a pixel"""
+        location = location & 0x07 # we only have 8 locations 0-7
+        self._command(LiquidCrystal_I2C._LCD_SETCGRAMADDR | (location << 3))
+        for i in range(0,8):
+          self._send(charmap[i], LiquidCrystal_I2C._Rs)
 
     def noBacklight(self):
         """Turn off the (optional) backlight"""
